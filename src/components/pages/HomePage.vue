@@ -11,7 +11,9 @@ export default {
   <div class="container-md my-5 py-5">
     <div class="recipe__title text-center">
       <h2>All Recipe</h2>
-      <p style="font-size: 15px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius magni voluptates cumque accusantium labore maiores, itaque saepe rerum eos dicta?</p>
+      <p style="font-size: 15px">
+        Find and share everyday cooking inspiration on All Recipe. Discover recipes, cooks, videos, and how-tos based on the food you love and the friends you follow.
+      </p>
     </div>
     <recipe-list></recipe-list>
   </div>
