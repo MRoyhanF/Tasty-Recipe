@@ -1,18 +1,23 @@
-<script>
+<script setup>
 import RecipeList from "../recipe/RecipeList.vue";
-import RECIPE_DATA from "../../recipe.js";
+import {onMounted, ref} from 'vue';
+import {useStore} from 'vuex';
 
-const recipeList = RECIPE_DATA;
-export default {
-  components: {
-    RecipeList,
-  },
-  data() {
-    return {
-      recipeList,
-    };
-  },
-};
+const store = useStore();
+const recipeListStatus = ref(false);
+const recipeList = ref([]);
+
+onMounted(async () => {
+  try {
+    await store.dispatch("recipe/getRecipeData");
+
+    recipeList.value = store.state.recipe.recipes;
+    recipeListStatus.value = recipeList.value.length > 0;
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 </script>
 
 <template>
@@ -23,7 +28,7 @@ export default {
     </div>
 
     <!-- Pengecekan apakah recipeList kosong -->
-    <div v-if="recipeList.length != 0" class="text-center mt-5">
+    <div v-if="recipeListStatus" class="text-center mt-5">
       <recipe-list :recipes="recipeList"></recipe-list>
     </div>
 

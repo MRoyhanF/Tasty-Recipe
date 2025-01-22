@@ -1,19 +1,21 @@
-// import './assets/main.css'
-import 'bootstrap/dist/css/bootstrap.css'
+import "bootstrap/dist/css/bootstrap.css";
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import { createRouter, createWebHistory } from 'vue-router'
-import { routes } from './routes.js'
+import { createApp } from "vue";
+import App from "./App.vue";
+import { createRouter, createWebHistory } from "vue-router";
+import { routes } from "./routes.js";
+import { store } from "./store/index.js";
 
 const router = createRouter({
-    history: createWebHistory(),
-    routes,
-    scrollBehavior(to, from, savedPosition) {
-        return { top: 0 }
-    }
-})
+  history: createWebHistory(),
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 };
+  },
+});
 
-createApp(App).use(router).mount('#app')
-// createApp(App).mount('#app')
-// import 'bootstrap/dist/js/bootstrap.js';
+const app = createApp(App);
+
+app.use(router);
+app.use(store); // Mendaftarkan store ke aplikasi
+app.mount("#app");

@@ -1,4 +1,4 @@
-import { default } from '../pages/HomePage.vue';
+
 <template>
     <div>
         <label :for="identity" class="fw-semibold">

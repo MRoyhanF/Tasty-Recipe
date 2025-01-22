@@ -14,7 +14,7 @@
       <form class="mt-3">
         <div class="row">
           <div class="col-md-6">
-            <base-input
+            <BaseInput
               type="text"
               identity="firstname"
               placeholder="Ex: Jack"
