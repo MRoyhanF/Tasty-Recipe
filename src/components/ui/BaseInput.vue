@@ -2,10 +2,11 @@ import { default } from '../pages/HomePage.vue';
 <template>
     <div>
         <label :for="identity" class="fw-semibold">
-            First Name <span style="color: #cb3a31">*</span>
+            {{ label }}<span style="color: #cb3a31">*</span>
+            <slot></slot>
         </label>
         <input 
-            class="form-control" 
+            :class="[{ 'd-none': isImage }, 'form-control']" 
             :type="text" 
             :id="identity" 
             :placeholder="placeholder" 
@@ -37,6 +38,11 @@ import { default } from '../pages/HomePage.vue';
         type: String,
         required: true,
         default: '0',
+    },
+    isImage: {
+        type: Boolean,
+        required: true,
+        default: false,
     },
  })
 </script>
