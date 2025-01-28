@@ -29,7 +29,8 @@ onMounted(async () => {
 
     <!-- Pengecekan apakah recipeList kosong -->
     <div v-if="recipeListStatus" class="text-center mt-5">
-      <recipe-list :recipes="recipeList"></recipe-list>
+      <!-- <recipe-list :recipes="recipeList"></recipe-list> -->
+      <RecipeList :recipes="recipeList"/>
     </div>
 
     <!-- Looping melalui recipeList jika tidak kosong -->

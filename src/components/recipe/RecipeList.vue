@@ -5,6 +5,8 @@
     :key="index"
     class="col-12 col-lg-3 col-sm-4 position-relative" 
     style="padding-top: 12px; padding-bottom: 12px">
+    <router-link  
+      :to="`/recipe/${ recipe.id }`" class="text-decoration-none">
       <div class="card text-decoration-none" style="height: 398px">
         <img
           :src="recipe.imageLink"
@@ -25,14 +27,20 @@
       <div class="position-absolute text-secondary bg-light px-2 py-1 rounded-circle top-0 end-0 m-4 like-icon">
         <i class="fas fa-heart"></i>
       </div>
+    </router-link>
     </div>
   </div>
 </template>
 
 <script setup>
+// import { onMounted } from 'vue';
+
 defineProps({
   recipes: {
     type: Array,
   },
 });
+// onMounted(() => {
+//   console.log(recipes);
+// });
 </script>
