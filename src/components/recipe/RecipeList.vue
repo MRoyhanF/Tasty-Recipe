@@ -33,14 +33,9 @@
 </template>
 
 <script setup>
-// import { onMounted } from 'vue';
-
 defineProps({
   recipes: {
     type: Array,
   },
 });
-// onMounted(() => {
-//   console.log(recipes);
-// });
 </script>

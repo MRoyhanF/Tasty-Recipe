@@ -1,7 +1,6 @@
 <template>
     <div class="my-2 p-4 d-flex flex-column-reverse flex-lg-row justify-content-between border border-secondary-sublet rounded">
       <div class="pe-lg-4">
-        <!-- <h2>Napa Cabbage Kimchi</h2> -->
         <h2>{{ recipeDetail.name }}</h2>
         <p>{{ recipeDetail.description }}</p>
   
